@@ -13,6 +13,8 @@ encounter builder currently uses only the 2014 DMG rules; this script adds
 3. Visit any encounter under `https://www.dndbeyond.com/my-encounters` — an
    alternative difficulty badge appears next to the existing readout.
 
+![Screenshot of the userscript showing difficulty calculations from four systems](docs/screenshot.png)
+
 ## Difficulty systems
 
 The script displays difficulty ratings from four systems in a table-like view:
