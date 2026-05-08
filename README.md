@@ -7,8 +7,9 @@ encounter builder currently uses only the 2014 DMG rules; this script adds
 
 ## Install
 
-1. Install Tampermonkey
-2. Install the userscript file
+1. Install [Tampermonkey](https://www.tampermonkey.net/) (or
+   [Violentmonkey](https://violentmonkey.github.io/))
+2. Install the userscript from [Greasy Fork](https://greasyfork.org/en/scripts/577224-dnd-beyond-alt-encounter-difficulty)
 3. Visit any encounter under `https://www.dndbeyond.com/my-encounters` — an
    alternative difficulty badge appears next to the existing readout.
 
@@ -60,6 +61,3 @@ EN Publishing. Rules reference at <https://a5e.tools/rules/designing-encounters>
 <https://www.gmbinder.com/share/-N4m46K77hpMVnh7upYa>.
 Web calculator: <https://www.challengerated.com>.
 
-## TODOs
-
-* Publish to one or more of these sites, maybe? https://www.tampermonkey.net/scripts.php
