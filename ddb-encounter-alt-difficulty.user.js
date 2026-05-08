@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DnD Beyond Alt Encounter Difficulty
 // @namespace    https://github.com/lukeyeager/ddb-encounter-alt-difficulty
-// @version      0.5
+// @version      1.0
 // @description  Shows alternative encounter difficulty ratings on D&D Beyond encounter pages
 // @match        https://www.dndbeyond.com/*
 // @updateURL    https://raw.githubusercontent.com/lukeyeager/ddb-encounter-alt-difficulty/main/ddb-encounter-alt-difficulty.user.js
@@ -667,7 +667,7 @@
     maxValue = Math.max(1, maxValue);
     const px = (val) => +(Math.min(val, maxValue) / maxValue * W).toFixed(1);
     const cx = px(normalizedDifficulty);
-    const tierColor = normalizedTiers.find((t) => normalizedDifficulty < t.threshold)?.color ?? normalizedTiers[normalizedTiers.length - 1]?.color ?? "#fff";
+    const tierColor = [...normalizedTiers].reverse().find((t) => t.threshold <= normalizedDifficulty)?.color ?? normalizedTiers[0]?.color ?? "#fff";
     const rects = normalizedTiers.map((tier, i) => {
       const x1 = px(tier.threshold);
       const x2 = px(i + 1 < normalizedTiers.length ? normalizedTiers[i + 1].threshold : maxValue);
@@ -751,7 +751,7 @@
       const normalizedMax = maxValue / normalizationFactor;
       return normalizedMax * 1.2;
     })));
-    el.innerHTML = results.map(({ system, result }) => statRow(system.name, cap(result.tiers.find((t) => result.difficulty < t.threshold)?.name ?? result.tiers[result.tiers.length - 1]?.name ?? "unknown") + (result.notes ? ` <span title="${result.notes}">❓</span>` : "")) + renderDifficultyMeter(result.difficulty, result.tiers, result.sweetspot, globalMaxValue)).join("");
+    el.innerHTML = results.map(({ system, result }) => statRow(system.name, cap([...result.tiers].reverse().find((t) => t.threshold <= result.difficulty)?.name ?? result.tiers[0]?.name ?? "unknown") + (result.notes ? ` <span title="${result.notes}">❓</span>` : "")) + renderDifficultyMeter(result.difficulty, result.tiers, result.sweetspot, globalMaxValue)).join("");
     const level = party[0]?.level ?? 1;
     const xgte = getXgteSuggestions(level, party.length);
     updateXgteInline(xgte, party.length);

@@ -185,8 +185,10 @@ function renderDifficultyMeter(
 	const cx = px(normalizedDifficulty);
 
 	const tierColor =
-		normalizedTiers.find((t) => normalizedDifficulty < t.threshold)?.color ??
-		normalizedTiers[normalizedTiers.length - 1]?.color ??
+		[...normalizedTiers]
+			.reverse()
+			.find((t) => t.threshold <= normalizedDifficulty)?.color ??
+		normalizedTiers[0]?.color ??
 		"#fff";
 
 	const rects = normalizedTiers
@@ -366,8 +368,10 @@ function updateDifficulty() {
 				statRow(
 					system.name,
 					cap(
-						result.tiers.find((t) => result.difficulty < t.threshold)?.name ??
-							result.tiers[result.tiers.length - 1]?.name ??
+						[...result.tiers]
+							.reverse()
+							.find((t) => t.threshold <= result.difficulty)?.name ??
+							result.tiers[0]?.name ??
 							"unknown",
 					) + (result.notes ? ` <span title="${result.notes}">❓</span>` : ""),
 				) +

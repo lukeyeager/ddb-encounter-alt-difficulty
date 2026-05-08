@@ -5,7 +5,7 @@ const HEADER = `\
 // ==UserScript==
 // @name         DnD Beyond Alt Encounter Difficulty
 // @namespace    https://github.com/lukeyeager/ddb-encounter-alt-difficulty
-// @version      0.5
+// @version      1.0
 // @description  Shows alternative encounter difficulty ratings on D&D Beyond encounter pages
 // @match        https://www.dndbeyond.com/*
 // @updateURL    https://raw.githubusercontent.com/lukeyeager/ddb-encounter-alt-difficulty/main/ddb-encounter-alt-difficulty.user.js
