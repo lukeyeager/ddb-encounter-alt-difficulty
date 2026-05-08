@@ -1,0 +1,16 @@
+{
+	"name": "ddb-encounter-alt-difficulty",
+	"private": true,
+	"scripts": {
+		"build": "bun scripts/build.ts",
+		"lint": "biome check .",
+		"test": "bun test"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.4.13",
+		"@types/bun": "latest"
+	},
+	"peerDependencies": {
+		"typescript": "^5"
+	}
+}
