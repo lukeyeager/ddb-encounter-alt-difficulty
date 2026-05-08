@@ -50,6 +50,14 @@ monster Power (based on average party level) and extends the scale with
 additional difficulty tiers above Oppressive: Overwhelming ≤ 1.10×, Crushing ≤
 1.30×, Devastating ≤ 1.60×, Impossible ≤ 2.25×.
 
+## Known issues
+
+**Monster quantity stepper not updating difficulty** — Clicking the +/- buttons
+to adjust monster count on the /edit page does not update the difficulty display.
+Adding or removing entire monster rows works correctly. Workaround: refresh the
+page. Root cause unknown; may be related to React re-rendering or timing issues
+with input value updates.
+
 ## Sources
 
 **5.5e (2024):** "Combat Encounters," *System Reference Document 5.2* ("SRD
