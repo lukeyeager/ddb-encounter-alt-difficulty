@@ -4,6 +4,7 @@
 // @version      1.0
 // @description  Dev wrapper: loads latest from localhost:8080; falls back to the embedded build if unavailable.
 // @match        https://www.dndbeyond.com/*
+// @license      MIT
 // @grant        GM_xmlhttpRequest
 // @connect      localhost
 // ==/UserScript==

@@ -10,6 +10,7 @@ const HEADER = `\
 // @match        https://www.dndbeyond.com/*
 // @updateURL    https://raw.githubusercontent.com/lukeyeager/ddb-encounter-alt-difficulty/main/ddb-encounter-alt-difficulty.user.js
 // @downloadURL  https://raw.githubusercontent.com/lukeyeager/ddb-encounter-alt-difficulty/main/ddb-encounter-alt-difficulty.user.js
+// @license      MIT
 // @grant        none
 // ==/UserScript==
 `;
